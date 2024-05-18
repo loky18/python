@@ -1,0 +1,220 @@
+#LOW LEVEL:
+#1.
+x=int(input("Enter a number:"))
+if x==0:
+    print(f"{x} is zero")
+elif x>0:
+    print(f"{x} is a positive number")
+else:
+    print(f"{x} is a negative number")
+###############
+#2.
+x=int(input("Enter your age:"))
+if x==0:
+    print("Inavild input")
+elif x>=18:
+    print("You are eligible to vote!")
+else:
+    print("You are not eligble to vote!")
+###############
+#3.
+x=int(input("Enter year(yyyy):"))
+if x==0:
+    print("Inavild input")
+elif x%40==0:
+    print("It is a leap year1")
+else:
+    print("It is not a leap year!")
+#################
+#4.
+n=input("Enter whether C or F:")
+x=float(input("Enter the value:"))
+if x==0:
+    print("Inavild input")
+if n=='F':
+    if x>=100.4:
+        print("you have fever!")
+    else:
+        print("you does not have fever!")
+else:
+    if x>=38:
+        print("You have fever!")
+    else:
+        print("You dont have fever!")
+###############
+#5.
+a=int(input("Enter 1st number:"))
+b=int(input("Enter 2nd number:"))
+c=int(input("Enter 3rd number:"))
+if a>b and a>c:
+    print(f"{a} is largest")
+elif b>a and b>c:
+    print(f"{b} is largest")
+else:
+    print(f"{c} is largest")
+##############
+#6.
+meal_cost = float(input("Enter the cost of the meal: "))
+tax_rate = float(input("Enter the tax rate (%): "))
+tip_percentage = float(input("Enter the tip percentage (%): ")
+tax_amount = meal_cost * (tax_rate / 100)
+tip_amount = meal_cost * (tip_percentage / 100)
+total_cost = meal_cost + tax_amount + tip_amount
+print(f"Total Cost of the Meal: ${total_cost:.2f}")
+###################
+#7.
+def triangle_type(side1, side2, side3):
+    if side1 == side2 == side3:
+        return "Equilateral Triangle"
+    elif side1 == side2 or side1 == side3 or side2 == side3:
+        return "Isosceles Triangle"
+    else:
+        return "Scalene Triangle"
+side1 = float(input("Enter the length of side 1: "))
+side2 = float(input("Enter the length of side 2: "))
+side3 = float(input("Enter the length of side 3: "))
+print("Triangle Type:", triangle_type(side1, side2, side3))
+#####################
+#8.
+def is_leap_year(year):
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        return True
+    else:
+        return False
+year = 2024  
+if is_leap_year(year):
+    print(f"{year} is a leap year with 366 days.")
+else:
+    print(f"{year} is a common year with 365 days.")
+###################
+#9.
+character = input("Enter a character: ")
+if character.lower() in 'aeiou':
+    print(f"{character} is a vowel.")
+else:
+    print(f"{character} is a consonant.")
+####################
+#10.
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+num3 = float(input("Enter the third number: "))
+numbers = [num1, num2, num3]
+numbers.sort()
+print("Numbers in ascending order:", numbers)
+
+#########################################################################
+
+#MEDIUM LEVEL
+#1.
+def grade(score):
+    if 90 <= score <= 100:
+        return "A"
+    elif 80 <= score <= 89:
+        return "B"
+    elif 70 <= score <= 79:
+        return "C"
+    elif 60 <= score <= 69:
+        return "D"
+    else:
+        return "F"
+n=int(input("Enter your score:"))
+gr=grade(n)
+print(f" Grade {gr}.")
+###############
+#2.
+def atm_simulation():
+    account_balance = float(input("Enter your account balance: $"))
+    withdrawal_amount = float(input("Enter the withdrawal amount: $"))
+
+    if account_balance >= withdrawal_amount:
+        print("Transaction successful.")
+    else:
+        print("Insufficient funds.")
+atm_simulation()  
+#################
+#3.
+import math
+def calculate_roots(a, b, c):
+    discriminant = b**2 - 4*a*c
+    if discriminant < 0:
+        return "No real roots"
+    elif discriminant == 0:
+        root = -b / (2*a)
+        return f"Roots: {root}, {root}"
+    else:
+        root1 = (-b + math.sqrt(discriminant)) / (2*a)
+        root2 = (-b - math.sqrt(discriminant)) / (2*a)
+        return f"Roots: {root1}, {root2}"
+print(calculate_roots(1, -3, 2))  
+print(calculate_roots(2, 5, 2)) 
+print(calculate_roots(1, -4, 4)) 
+################
+#4.
+##############
+#5.
+import calendar
+def days_in_month():
+    month = input("Enter the month: ")
+    year = int(input("Enter the year: "))
+    
+    month_num = list(calendar.month_name).index(month.capitalize())
+    days = calendar.monthrange(year, month_num)[1]
+    
+    print(f"Number of days in {month}, {year}: {days} days")
+days_in_month()
+############################################################################
+
+
+#HIGH
+#1.
+d={"chickenrice":30,"eggrice":20,"chickenpallipalayam":50,"gobimanjuriyan":20}
+us_d={}
+while True:
+    op=int(input('''Enter ur op:
+        1.chickenrice
+        2.eggrice
+        3.chickenpallipalayam
+        4.gobimanjuriyan
+        5.To exit
+'''))
+if(op==5):
+        break
+qty=int(input("Enter the quantity(kg):\n"))
+if(op==1):
+  us_d["chickenrice"]=[qty,d["chickenrice"]]
+elif(op==2):
+        us_d["eggrice"]=[qty,d["eggrice"]]
+elif(op==3):
+        us_d["chickenpallipalayam"]=[qty,50]
+elif(op==4):
+        us_d["gobimanjuriyan"]=[qty,20]
+print("\nYour cart is updated!!")
+def ad_check():
+    add=input("Enter ur address:")
+    for i in add.split ():
+        if (i.lower()=="ksr"):
+            return False
+        else:
+            return True
+while True:
+    if ad_check()==True:
+        print("Delivery address accepted!")
+        break
+    else:
+        print("Try other address!")
+tt_amt=0
+for i in us_d:
+    if(i=="chickenrice"):
+        tt_amt+=us_d[i][0]*us_d[i][1]
+    elif(i=="eggrice"):
+        tt_amt+=us_d[i][0]*us_d[i][1]
+    elif(i=="chickenpallipalayam"):
+        tt_amt+=us_d[i][0]*us_d[i][1]
+    elif(i=="gobirice"):
+        tt_amt+=us_d[i][0]*us_d[i][1]
+if(tt_amt>50):
+    tt_amt-=tt_amt*0.1
+elif(tt_amt>100):
+    tt_amt-=tt_amt*0.15
+print(f"After reducing the discount you need to pay Rs{tt_amt}!!")
+    
