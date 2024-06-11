@@ -1,0 +1,173 @@
+
+Low level:
+
+1. Multiplication Table:
+   
+   num=int(input("Enter a number to create its multiplication table: "))
+   for i in range(1, 11):
+       print(f"{num} x {i} = {num * i}")
+   
+****************************************************
+
+2. Print Each Fruit in a List:
+   
+   fruits=input("Enter a list of fruits separated by commas: ").split(",")
+   for fruit in fruits:
+       print(fruit.strip())
+   
+****************************************************
+
+3. Print Even Numbers Between 1 and 20:
+   
+   for num in range(1, 21):
+       if num % 2==0:
+           print(num)
+
+****************************************************
+
+4. Calculate Factorial:
+
+   num = int(input("Enter a number to calculate its factorial: "))
+   factorial=1
+   for i in range(1, num + 1):
+       factorial *= i
+   print(f"The factorial of {num} is {factorial}")
+
+****************************************************
+
+5. Check if a Number is Prime:
+ 
+   num=int(input("Enter a number to check if it is prime: "))
+   if num > 1:
+       for i in range(2, num):
+           if (num % i)==0:
+               print(f"{num} is not a prime number")
+               break
+       else:
+           print(f"{num} is a prime number")
+   else:
+       print(f"{num} is not a prime number")
+   
+****************************************************
+
+6. Count the Number of Vowels in a String:
+
+   string=input("Enter a string: ")
+   vowels="aeiouAEIOU"
+   count=sum(1 for char in string if char in vowels)print(f"The 
+   number of vowels in the string is {count}")
+   
+****************************************************
+
+Medium level:
+
+1. Pattern 1:
+   
+   for i in range(1, 10):
+       print(f"{str(i) * i}")
+ 
+****************************************************
+
+2. Pattern 2:
+   
+   rows = int(input("Enter the number of rows for the pattern: "))
+   for i in range(1, rows + 1):
+       print("* " * i)
+   for i in range(rows - 1, 0, -1):
+       print("* " * i)
+   
+****************************************************
+
+3.Alphabet Pattern 'D':
+   
+   print(" **** ")
+   for _ in range(5):
+       print(" *   *")
+   print(" **** ")
+   
+****************************************************
+
+4. Alphabet Pattern 'M':
+
+      for i in range(7):
+       if i == 2:
+           print(" * *   * *")
+       elif i == 3:
+           print(" *   *   *")
+       else:
+           print(" *       *")
+      
+****************************************************
+
+5. Alphabet Pattern 'O':
+   ```python
+   print(" *** ")
+   for _ in range(5):
+       print(" *   *")
+   print(" *** ")
+      
+****************************************************
+
+6. Right-Angled Triangle of Numbers:
+   
+   n=int(input("Enter the number of rows: "))
+   for i in range(1, n + 1):
+       print("".join(str(j) for j in range(1, i + 1)))
+      
+****************************************************
+
+7. Inverted Right-Angled Triangle of Stars:
+   
+   n=int(input("Enter the number of rows: "))
+   for i in range(n, 0, -1):
+       print("*" * i)
+      
+****************************************************
+
+8. Pyramid of Stars:
+   
+   n=int(input("Enter the number of rows: "))
+   for i in range(n):
+       print(" " * (n - i - 1) + "*" * (2 * i + 1))
+      
+****************************************************
+
+9. Diamond Pattern of Stars:
+   
+   n=int(input("Enter the number of rows: "))
+   for i in range(n):
+       print(" " * (n - i - 1) + "*" * (2 * i + 1))
+   for i in range(n - 2, -1, -1):
+       print(" " * (n - i - 1) + "*" * (2 * i + 1))
+      
+****************************************************
+
+10. Right-Angled Triangle of Incrementing Numbers:
+    
+    n=int(input("Enter the number of rows: "))
+    num=1
+    for i in range(1, n + 1):
+        for j in range(1, i + 1):
+            print(num, end=" ")
+            num += 1
+        print()
+       
+****************************************************
+High Level:
+
+1. Password Validation:
+   
+   import re
+
+   password=input("Enter a password: ")
+
+   if (6 <= len(password) <= 16 and
+       re.search(r"[a-z]", password) and
+       re.search(r"[A-Z]", password) and
+       re.search(r"\d", password) and
+       re.search(r"[$#@]", password)):
+       print("Valid password")
+   else:
+       print("Invalid password")
+      
+****************************************************
